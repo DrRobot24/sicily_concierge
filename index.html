@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Siciliana | Exclusive Luxury Concierge Siracusa</title>
+    
+    <!-- Google Fonts per un look Lusso -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RESET & BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #FAFAFA;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: #1a2a3a; /* Blu Notte */
+        }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- VARIABLES --- */
+        :root {
+            --gold: #D4AF37;
+            --dark-blue: #1a2a3a;
+            --light-grey: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 24px; font-weight: 700; color: var(--dark-blue); letter-spacing: 2px; }
+        nav ul { display: flex; gap: 30px; }
+        nav a { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--dark-blue); }
+        nav a:hover { color: var(--gold); }
+        .cta-btn {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 10px 25px;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            border: 1px solid var(--dark-blue);
+        }
+        .cta-btn:hover { background: transparent; color: var(--dark-blue); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Immagine Siracusa/Mare */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+        .hero h1 { font-size: 4rem; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 40px; font-weight: 300; }
+
+        /* --- PHILOSOPHY --- */
+        .philosophy { padding: 100px 10%; text-align: center; background: var(--white); }
+        .philosophy h2 { font-size: 2.5rem; margin-bottom: 30px; color: var(--gold); }
+        .philosophy p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 50px auto; color: #555; }
+        .features { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; }
+        .feature-item { flex: 1; min-width: 250px; }
+        .feature-item h3 { font-size: 1.5rem; margin-bottom: 15px; }
+
+        /* --- SERVICES (PACKAGES) --- */
+        .packages { padding: 100px 5%; background: var(--light-grey); }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 3rem; margin-bottom: 15px; }
+        
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            padding: 40px;
+            width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+
+        .card-header { text-align: center; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .gem-name { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--dark-blue); display: block; }
+        .gem-type { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #888; margin-top: 5px; display: block;}
+        
+        .price { font-size: 1.5rem; color: var(--gold); font-weight: 700; margin-top: 15px; display: block; }
+        .price span { font-size: 0.9rem; font-weight: 300; color: #333; }
+
+        .card-body ul { text-align: left; margin-bottom: 30px; }
+        .card-body li { margin-bottom: 15px; font-size: 0.95rem; display: flex; align-items: flex-start; }
+        .card-body li::before { content: "✦"; color: var(--gold); margin-right: 10px; }
+
+        .card-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+        
+        /* Highlight for Diamante */
+        .card.premium { border: 2px solid var(--gold); transform: scale(1.05); z-index: 2; }
+        .card.premium .card-btn { background: var(--gold); color: var(--dark-blue); font-weight: 700; }
+
+        /* --- FOOTER --- */
+        footer { background: var(--dark-blue); color: var(--white); padding: 60px 5%; text-align: center; }
+        footer p { opacity: 0.7; font-size: 0.9rem; margin-top: 20px; }
+        .asterisk { font-size: 0.8rem; margin-top: 40px; color: #aaa; font-style: italic; }
+
+        /* --- MOBILE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; } /* Semplificato per demo */
+            .cards-container { flex-direction: column; align-items: center; }
+            .card.premium { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGAZIONE -->
+    <header>
+        <div class="logo">AURA SICILIANA</div>
+        <nav>
+            <ul>
+                <li><a href="#filosofia">Filosofia</a></li>
+                <li><a href="#esperienze">Esperienze</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+        <a href="#contatti" class="cta-btn">Private Area</a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>L'Anima Nobile di Siracusa</h1>
+        <p>Non offriamo semplici soggiorni. Creiamo privilegi. <br>Vivi la Sicilia con l'assistenza esclusiva del tuo Personal Local Team.</p>
+        <a href="#esperienze" class="cta-btn" style="background: white; color: var(--dark-blue); border: none;">Scopri i Privilegi</a>
+    </section>
+
+    <!-- FILOSOFIA -->
+    <section id="filosofia" class="philosophy">
+        <h2>Oltre il Concierge</h2>
+        <p>Ci rivolgiamo a chi cerca l'essenza, non l'apparenza. I nostri ospiti non visitano Siracusa; la possiedono per qualche giorno. Un team di professionisti locali referenziati sarà la vostra ombra discreta, anticipando i desideri e risolvendo ogni logistica.</p>
+        
+        <div class="features">
+            <div class="feature-item">
+                <h3>Accesso Esclusivo</h3>
+                <p>Palazzi privati, cene in luoghi chiusi al pubblico, barche riservate. Dove gli altri si fermano, noi apriamo la porta.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Local Friend</h3>
+                <p>Non una guida turistica, ma una persona del luogo, colta e inserita nell'alta società, dedicata interamente a voi.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Zero Pensieri</h3>
+                <p>Dalla prenotazione del volo privato al tavolo nel ristorante impossibile da prenotare. Pensiamo a tutto noi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIZI / PACCHETTI -->
+    <section id="esperienze" class="packages">
+        <div class="section-title">
+            <h2>Le Nostre Collezioni</h2>
+            <p>Tre livelli di eccellenza per vivere Siracusa</p>
+        </div>
+
+        <div class="cards-container">
+            
+            <!-- SMERALDO -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="gem-name">Smeraldo</span>
+                    <span class="gem-type">Entry-Level Luxury</span>
+                    <span class="price">€750 – €1.200*</span>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Alloggio:</strong> Hotel 4★ Boutique o 5★ Standard</li>
+                        <li><strong>Trasporto:</strong> Transfer privato base</li>
+                        <li><strong>Esperienze:</strong> 2-3 incluse (Visita città privata, cena gourmet, tour con autista)</li>
+                        <li><strong>Concierge:</strong> Supporto base dedicato</li>
+                        <li><strong>Stile:</strong> Lusso soft, comfort superiore senza eccessi</li>
+                    </ul>
+                </div>
+                <a href="#contatti" class="card-btn">Richiedi Smeraldo</a>
+            </div>
+
+            <!-- LAPISLAZZULI -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="gem-name">Lapislazzuli</span>
+                    <span class="gem-type">Mid-High Luxury</span>
+                    <span class="price">€1.500 – €2.500*</span>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Alloggio:</strong> Hotel 5★ selezionato</li>
+                        <li><strong>Trasporto:</strong> Transfer privato di classe superiore</li>
+                        <li><strong>Esperienze:</strong> 3-4 incluse (Guida storica esclusiva, Boat tour privato, Wine & Dining Experience)</li>
+                        <li><strong>Concierge:</strong> Dedicato h12</li>
+                        <li><strong>Plus:</strong> Accesso ad alcune esperienze riservate</li>
+                    </ul>
+                </div>
+                <a href="#contatti" class="card-btn">Richiedi Lapislazzuli</a>
+            </div>
+
+            <!-- DIAMANTE -->
+            <div class="card premium">
+                <div class="card-header">
+                    <span class="gem-name">Diamante</span>
+                    <span class="gem-type">Premium Exclusive</span>
+                    <span class="price">€3.000 – €5.000+*</span>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Alloggio:</strong> Villa di charme privata, Resort Elite o Suite Presidenziale</li>
+                        <li><strong>Trasporto:</strong> Limousine, Yacht privato, Elicottero</li>
+                        <li><strong>Esperienze:</strong> 5+ Premium (Chef personale, Spa privata, Eventi su misura, Degustazioni rare)</li>
+                        <li><strong>Concierge:</strong> Full-Service 24/7 ("Local Friend" sempre presente)</li>
+                        <li><strong>Esclusività:</strong> Massima personalizzazione e privacy totale</li>
+                    </ul>
+                </div>
+                <a href="#contatti" class="card-btn">Richiedi Diamante</a>
+            </div>
+
+        </div>
+        <div class="asterisk">* I prezzi sono indicativi, per persona o per pacchetto giornaliero in base alla stagionalità e alla personalizzazione richiesta.</div>
+    </section>
+
+    <!-- CONTATTI -->
+    <section id="contatti" style="padding: 80px 20px; text-align: center; background: white;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Inizia il tuo Viaggio</h2>
+        <p style="margin-bottom: 40px;">Compila il form per essere contattato dal nostro Senior Concierge.</p>
+        
+        <form style="max-width: 600px; margin: 0 auto; text-align: left;">
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Nome e Cognome</label>
+                <input type="text" style="width: 100%; padding: 15px; border: 1px solid #ccc; background: #f9f9f9;" placeholder="Il tuo nome">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Collezione di interesse</label>
+                <select style="width: 100%; padding: 15px; border: 1px solid #ccc; background: #f9f9f9;">
+                    <option>Smeraldo</option>
+                    <option>Lapislazzuli</option>
+                    <option>Diamante</option>
+                    <option>Richiesta Personalizzata</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Note Particolari</label>
+                <textarea rows="4" style="width: 100%; padding: 15px; border: 1px solid #ccc; background: #f9f9f9;" placeholder="Descrivici i tuoi desideri..."></textarea>
+            </div>
+            <button type="button" class="cta-btn" style="width: 100%; font-size: 1rem; cursor: pointer;">Invia Richiesta Riservata</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="logo" style="color: white; margin-bottom: 20px;">AURA SICILIANA</div>
+        <p>Siracusa, Sicily - Italia</p>
+        <p>+39 0931 000 000 | privilege@aurasiciliana.com</p>
+        <p style="font-size: 0.7rem; margin-top: 50px;">© 2023 Aura Siciliana. All rights reserved. Privacy Policy.</p>
+    </footer>
+
+</body>
+</html>
