@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura Siciliana | Exclusive Luxury Concierge Siracusa</title>
+    <title>Old Money Sicily Concierge | Exclusive Luxury Siracusa</title>
     
     <!-- Google Fonts per un look Lusso -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,14 @@
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        .logo { font-size: 24px; font-weight: 700; color: var(--dark-blue); letter-spacing: 2px; }
+        .logo { 
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px; 
+            font-weight: 700; 
+            color: var(--dark-blue); 
+            letter-spacing: 1px; 
+            text-transform: uppercase;
+        }
         nav ul { display: flex; gap: 30px; }
         nav a { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--dark-blue); }
         nav a:hover { color: var(--gold); }
@@ -60,15 +67,18 @@
             font-size: 12px;
             letter-spacing: 1.5px;
             border: 1px solid var(--dark-blue);
+            cursor: pointer;
         }
         .cta-btn:hover { background: transparent; color: var(--dark-blue); }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO SECTION MODIFICATA --- */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Immagine Siracusa/Mare */
+            /* Qui colleghiamo la tua immagine salvata come siracusa-hero.jpg */
+            background: linear-gradient(rgba(26, 42, 58, 0.4), rgba(26, 42, 58, 0.4)), url('siracusa-hero.jpg'); 
             background-size: cover;
             background-position: center;
+            background-attachment: fixed; /* Effetto parallasse elegante */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -78,7 +88,7 @@
             padding: 0 20px;
         }
         .hero h1 { font-size: 4rem; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 40px; font-weight: 300; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 40px; font-weight: 300; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
 
         /* --- PHILOSOPHY --- */
         .philosophy { padding: 100px 10%; text-align: center; background: var(--white); }
@@ -149,6 +159,8 @@
 
         /* --- MOBILE --- */
         @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            .logo { font-size: 18px; }
             .hero h1 { font-size: 2.5rem; }
             nav { display: none; } /* Semplificato per demo */
             .cards-container { flex-direction: column; align-items: center; }
@@ -160,7 +172,7 @@
 
     <!-- NAVIGAZIONE -->
     <header>
-        <div class="logo">AURA SICILIANA</div>
+        <div class="logo">OLD MONEY SICILY</div>
         <nav>
             <ul>
                 <li><a href="#filosofia">Filosofia</a></li>
@@ -171,17 +183,17 @@
         <a href="#contatti" class="cta-btn">Private Area</a>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION CON FOTO SIRACUSA -->
     <section class="hero">
-        <h1>L'Anima Nobile di Siracusa</h1>
-        <p>Non offriamo semplici soggiorni. Creiamo privilegi. <br>Vivi la Sicilia con l'assistenza esclusiva del tuo Personal Local Team.</p>
+        <h1>Siracusa, oltre l'immaginabile.</h1>
+        <p>Il lusso di vivere la Sicilia con chi ne custodisce i segreti. <br>Non siamo una guida, siamo la tua chiave d'accesso all'élite.</p>
         <a href="#esperienze" class="cta-btn" style="background: white; color: var(--dark-blue); border: none;">Scopri i Privilegi</a>
     </section>
 
     <!-- FILOSOFIA -->
     <section id="filosofia" class="philosophy">
-        <h2>Oltre il Concierge</h2>
-        <p>Ci rivolgiamo a chi cerca l'essenza, non l'apparenza. I nostri ospiti non visitano Siracusa; la possiedono per qualche giorno. Un team di professionisti locali referenziati sarà la vostra ombra discreta, anticipando i desideri e risolvendo ogni logistica.</p>
+        <h2>Old Money Sicily Concierge</h2>
+        <p>Dimenticate le agenzie di viaggio. Noi siamo il vostro contatto locale, il 'friend in town' che apre le porte solitamente chiuse. Un team di professionisti siracusani dedicati esclusivamente a voi, 24/7, per garantire che l'unica vostra preoccupazione sia scegliere quale meraviglia ammirare.</p>
         
         <div class="features">
             <div class="feature-item">
@@ -298,10 +310,10 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="logo" style="color: white; margin-bottom: 20px;">AURA SICILIANA</div>
+        <div class="logo" style="color: white; margin-bottom: 20px;">OLD MONEY SICILY</div>
         <p>Siracusa, Sicily - Italia</p>
-        <p>+39 0931 000 000 | privilege@aurasiciliana.com</p>
-        <p style="font-size: 0.7rem; margin-top: 50px;">© 2023 Aura Siciliana. All rights reserved. Privacy Policy.</p>
+        <p>+39 0931 000 000 | privilege@oldmoney-sicily.com</p>
+        <p style="font-size: 0.7rem; margin-top: 50px;">© 2025 Old Money Sicily Concierge. All rights reserved. Privacy Policy.</p>
     </footer>
 
 </body>
